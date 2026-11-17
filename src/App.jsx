@@ -86,16 +86,23 @@ const experience = [
   {
     role: "Software Developer",
     company: "Prosares Solutions Pvt. Ltd.",
-    period: "May 2023 – Present",
+    period: "May 2023 – October 2026 · 3 years 7 months",
     details:
       "Developed and maintained SharePoint Online intranet portals and ESS applications using SPFx and React.js. Built custom web parts, extensions, forms and dashboards; automated HR and administrative processes with Power Automate; and worked with stakeholders to translate business requirements into usable solutions.",
   },
   {
     role: "Full Stack Developer Intern",
     company: "Xeon Multi Media",
-    period: "February 2023 – May 2023",
+    period: "February 2023 – May 2023 · 3 months",
     details:
       "Developed web applications using PHP, MySQL, HTML and CSS, and built responsive pages based on client requirements.",
+  },
+  {
+    role: "Data Entry Executive",
+    company: "G.G Export",
+    period: "November 2021 – January 2023 · 1 year 3 months",
+    details:
+      "Maintained daily inventory and sales records and prepared consolidated quarterly reports for management. This role forms part of my overall professional experience.",
   },
 ];
 
@@ -150,10 +157,7 @@ function App() {
             <div className="eyebrow">SharePoint · SPFx · React · .NET Developer</div>
             <h1>I build business applications that make <em>work simpler.</em></h1>
             <p className="lead">
-              I&apos;m Mahesh Menkeri, a software developer with 3+ years of experience
-              building SharePoint Online portals, SPFx solutions, workflow automation
-              and web applications. I turn business requirements into practical,
-              user-friendly digital solutions.
+              I&apos;m Mahesh Menkeri, a developer with 5 years of overall professional experience, including 3 years 10 months in software development. I build SharePoint Online portals, SPFx solutions, workflow automation and full-stack business applications that turn business requirements into practical, user-friendly digital solutions.
             </p>
             <div className="hero-actions">
               <a className="button" href="#work">View my projects ↗</a>
@@ -169,7 +173,7 @@ function App() {
             <div className="mini-label">Developer profile</div>
             <div className="code-lines">
               <div><b>const</b> mahesh = {'{'}</div>
-              <div>&nbsp;&nbsp;experience: &quot;3+ years&quot;,</div>
+              <div>&nbsp;&nbsp;overallExperience: &quot;5 years&quot;,</div>
               <div>&nbsp;&nbsp;speciality: &quot;SharePoint &amp; SPFx&quot;,</div>
               <div>&nbsp;&nbsp;frontend: [&quot;React&quot;, &quot;JavaScript&quot;],</div>
               <div>&nbsp;&nbsp;backend: [&quot;.NET Core&quot;, &quot;SQL&quot;],</div>
@@ -177,9 +181,9 @@ function App() {
               <div>{'};'}</div>
             </div>
             <div className="stats">
-              <div className="stat"><strong>3+</strong><span>Years experience</span></div>
+              <div className="stat"><strong>5</strong><span>Years overall experience</span></div>
+              <div className="stat"><strong>3y 10m</strong><span>Years in software development*</span></div>
               <div className="stat"><strong>4</strong><span>Featured projects</span></div>
-              <div className="stat"><strong>16</strong><span>Core technologies</span></div>
             </div>
           </aside>
         </section>
@@ -228,7 +232,8 @@ function App() {
         <section className="section" id="experience">
           <div className="container">
             <div className="section-heading">
-              <div><div className="eyebrow">Career journey</div><h2>Professional experience.</h2></div>
+              <div><div className="eyebrow">Career journey</div><h2>5 years of overall professional experience.</h2></div>
+              <p className="section-intro">This includes 1 year 3 months in data entry, 3 months as a Full Stack Developer Intern and 3 years 7 months as a Software Developer.</p>
             </div>
             <div className="steps-grid">
               {experience.map((item) => (
@@ -240,6 +245,7 @@ function App() {
                 </article>
               ))}
             </div>
+            <p className="small-note">Software development experience: approximately 3 years 10 months, including the internship. Overall professional experience also includes 1 year 3 months in data entry.</p>
           </div>
         </section>
 
@@ -248,10 +254,7 @@ function App() {
             <div><div className="eyebrow">About me</div><h2>Bridging business requirements and technology.</h2></div>
             <div className="about-panel">
               <p>
-                I&apos;m a software developer based in Mumbai with a Bachelor of Science
-                in Information Technology. My experience includes developing SharePoint
-                Online intranet portals, Employee Self-Service applications, role-based
-                business workflows and responsive web applications.
+                I&apos;m a software developer based in Mumbai with 5 years of overall professional experience. This includes 3 years 7 months as a Software Developer at Prosares Solutions, 3 months as a Full Stack Developer Intern and 1 year 3 months in data entry. My software development work focuses on SharePoint Online intranet portals, Employee Self-Service applications, role-based business workflows and responsive web applications.
               </p>
               <p>
                 I enjoy understanding how a business process works, identifying where
