@@ -3,87 +3,107 @@ import "./App.css";
 const services = [
   {
     icon: "▦",
-    title: "SharePoint Development",
+    title: "SharePoint & SPFx Development",
     description:
-      "SharePoint site setup, page customization, lists, libraries, permissions and structured content experiences.",
-    tags: ["SharePoint", "Lists", "Libraries"],
+      "Custom SharePoint Online solutions, SPFx web parts, extensions, forms, dashboards and employee-facing intranet experiences.",
+    tags: ["SharePoint Online", "SPFx", "React.js", "CSOM"],
   },
   {
     icon: "↗",
-    title: "Workflow & Automation",
+    title: "Workflow & Business Automation",
     description:
-      "Practical workflow design and automation support to help teams streamline repetitive business processes.",
-    tags: ["Workflows", "Approvals*", "Power Automate*"],
+      "Role-based approval workflows, request management, notifications and process automation for HR, procurement and operations teams.",
+    tags: ["Power Automate", "Approvals", "Business workflows"],
   },
   {
     icon: "⌘",
-    title: "Website Development",
+    title: ".NET & Full Stack Development",
     description:
-      "Responsive business websites and landing pages with clean layouts, clear messaging and user-friendly navigation.",
-    tags: ["HTML", "CSS", "JavaScript"],
+      "Business applications and responsive interfaces built with React, JavaScript, .NET Core and SQL-based data solutions.",
+    tags: [".NET Core", "React.js", "SQL", "REST APIs"],
   },
 ];
 
 const projects = [
   {
     number: "01",
-    title: "Team Collaboration Hub",
+    title: "Vehicle Tracking Portal",
+    period: "May 2026 – August 2026",
     description:
-      "A SharePoint-style workspace concept for organizing team resources, documents and key updates in one place.",
-    tags: ["SharePoint", "Information architecture", "UI"],
-    note: "Demo concept — not presented as paid client work.",
+      "Developed a role-based vehicle procurement portal supporting Requestor, Vendor, Approver, Accounts and Admin workflows. The solution manages multi-vendor quotations, compares bids, automates lowest-quote selection and vendor assignment, and supports placement, dispatch and invoice documents.",
+    tags: ["React.js", "SPFx", "JavaScript", "Power Automate"],
     variant: "mint",
   },
   {
     number: "02",
-    title: "Business Landing Page",
+    title: "Crompton ESS Intranet",
+    period: "January 2026 – March 2026",
     description:
-      "A responsive landing page concept with a clear service story, strong calls to action and a mobile-friendly layout.",
-    tags: ["HTML", "CSS", "JavaScript"],
-    note: "Add a live URL and repository when ready.",
+      "Built an Employee Self-Service intranet with role-based access and intuitive navigation. Used CSOM to read employee master data from Excel files in SharePoint libraries and synchronize details such as designation, department, date of birth and contact information with SharePoint user profiles and lists.",
+    tags: ["SharePoint Online", "SPFx", "React.js", "CSOM"],
     variant: "blue",
   },
   {
     number: "03",
-    title: "Document Request Tracker",
+    title: "GIS Portal",
+    period: "October 2025 – November 2025",
     description:
-      "A sample request-tracking experience showing how teams could submit, organize and monitor document requests.",
-    tags: ["Process design", "SharePoint Lists"],
-    note: "Demo concept — replace with a real build or remove.",
+      "Developed a role-based request portal for MLL users, Lead Approvers, Managers and Admins. Implemented request submission, category-based approvals, send-back handling, manager approval, bulk request creation through Excel upload and automated email notifications.",
+    tags: ["React.js", "SPFx", "Power Automate", "Role-based access"],
     variant: "green",
   },
   {
     number: "04",
-    title: "Personal Portfolio Website",
+    title: "VTOutbound",
+    period: "December 2024 – February 2025",
     description:
-      "A responsive personal brand website designed to explain services, showcase work and make it easy for clients to get in touch.",
-    tags: ["Web design", "Responsive", "SEO basics"],
-    note: "This portfolio itself can become one of your live samples.",
+      "Created a workflow-driven vendor quotation solution for stockyard operations. Implemented role-based workflows for MLL, Outbound Officer, Manager and HOD, including automated approvals, exception handling based on should-cost validation and operational reporting.",
+    tags: ["React.js", "SPFx", "JavaScript", "Power Automate"],
     variant: "purple",
   },
 ];
 
 const skills = [
-  "Microsoft SharePoint",
-  "SharePoint Online*",
-  "Site Pages & Libraries",
-  "Lists & Permissions",
+  "SharePoint Online",
+  "SharePoint Framework (SPFx)",
+  "React.js",
+  "JavaScript",
+  "TypeScript",
+  "CSOM",
+  ".NET Core",
+  "REST APIs",
+  "SQL / MySQL",
+  "Power Automate",
   "HTML5",
   "CSS3",
-  "JavaScript",
-  "Responsive Design",
-  "Web Development",
-  "Problem Solving",
-  "Client Communication",
+  "Bootstrap",
+  "jQuery",
+  "AJAX",
+  "Git",
+];
+
+const experience = [
+  {
+    role: "Software Developer",
+    company: "Prosares Solutions Pvt. Ltd.",
+    period: "May 2023 – Present",
+    details:
+      "Developed and maintained SharePoint Online intranet portals and ESS applications using SPFx and React.js. Built custom web parts, extensions, forms and dashboards; automated HR and administrative processes with Power Automate; and worked with stakeholders to translate business requirements into usable solutions.",
+  },
+  {
+    role: "Full Stack Developer Intern",
+    company: "Xeon Multi Media",
+    period: "February 2023 – May 2023",
+    details:
+      "Developed web applications using PHP, MySQL, HTML and CSS, and built responsive pages based on client requirements.",
+  },
 ];
 
 function TagList({ items }) {
   return (
     <div className="tags">
       {items.map((item) => (
-        <span className="tag" key={item}>
-          {item}
-        </span>
+        <span className="tag" key={item}>{item}</span>
       ))}
     </div>
   );
@@ -96,11 +116,7 @@ function ProjectVisual({ variant }) {
         <div className="mock-sidebar" />
         <div className="mock-content">
           <div className="mock-line" />
-          <div className="mock-boxes">
-            <i />
-            <i />
-            <i />
-          </div>
+          <div className="mock-boxes"><i /><i /><i /></div>
           <div className="mock-line short" />
         </div>
       </div>
@@ -115,75 +131,55 @@ function App() {
     <>
       <header className="site-header">
         <div className="container nav">
-          <a className="brand" href="#home" aria-label="Mahesh home">
-            MAHESH<span>.</span>
-          </a>
+          <a className="brand" href="#home" aria-label="Mahesh home">MAHESH<span>.</span></a>
           <nav className="nav-links" aria-label="Main navigation">
             <a href="#services">Services</a>
-            <a href="#work">Work</a>
+            <a href="#work">Projects</a>
+            <a href="#experience">Experience</a>
             <a href="#about">About</a>
             <a href="#skills">Skills</a>
             <a href="#contact">Contact</a>
           </nav>
-          <a className="button button-small" href="#contact">
-            Let&apos;s talk ↗
-          </a>
+          <a className="button button-small" href="#contact">Let&apos;s connect ↗</a>
         </div>
       </header>
 
       <main>
         <section className="container hero" id="home">
           <div className="hero-copy">
-            <div className="eyebrow">Freelance SharePoint &amp; Web Developer</div>
-            <h1>
-              I build digital tools that make <em>work simpler.</em>
-            </h1>
+            <div className="eyebrow">SharePoint · SPFx · React · .NET Developer</div>
+            <h1>I build business applications that make <em>work simpler.</em></h1>
             <p className="lead">
-              I help teams improve the way they work with SharePoint solutions,
-              practical workflow improvements and clean, responsive websites.
-              From an idea to a reliable delivery, let&apos;s build something useful.
+              I&apos;m Mahesh Menkeri, a software developer with 3+ years of experience
+              building SharePoint Online portals, SPFx solutions, workflow automation
+              and web applications. I turn business requirements into practical,
+              user-friendly digital solutions.
             </p>
             <div className="hero-actions">
-              <a className="button" href="#contact">
-                Start a project ↗
-              </a>
-              <a className="button button-ghost" href="#work">
-                Explore my work ↓
-              </a>
+              <a className="button" href="#work">View my projects ↗</a>
+              <a className="button button-ghost" href="#contact">Contact me ↓</a>
             </div>
             <div className="availability">
               <span className="status-dot" />
-              Available for freelance projects · India (IST)
+              Based in Mumbai, India · Open to opportunities
             </div>
           </div>
 
           <aside className="code-card">
-            <div className="mini-label">A little about my work</div>
+            <div className="mini-label">Developer profile</div>
             <div className="code-lines">
-              <div>
-                <b>const</b> developer = {"{"}
-              </div>
-              <div>&nbsp;&nbsp;experience: &quot;3.6+ years&quot;,</div>
-              <div>&nbsp;&nbsp;focus: &quot;SharePoint&quot;,</div>
-              <div>
-                &nbsp;&nbsp;alsoBuilds: [&quot;Websites&quot;, &quot;UI&quot;],
-              </div>
-              <div>&nbsp;&nbsp;approach: &quot;Clear &amp; reliable&quot;</div>
-              <div>{"};"}</div>
+              <div><b>const</b> mahesh = {'{'}</div>
+              <div>&nbsp;&nbsp;experience: &quot;3+ years&quot;,</div>
+              <div>&nbsp;&nbsp;speciality: &quot;SharePoint &amp; SPFx&quot;,</div>
+              <div>&nbsp;&nbsp;frontend: [&quot;React&quot;, &quot;JavaScript&quot;],</div>
+              <div>&nbsp;&nbsp;backend: [&quot;.NET Core&quot;, &quot;SQL&quot;],</div>
+              <div>&nbsp;&nbsp;automation: &quot;Power Automate&quot;</div>
+              <div>{'};'}</div>
             </div>
             <div className="stats">
-              <div className="stat">
-                <strong>3.6+</strong>
-                <span>Years experience</span>
-              </div>
-              <div className="stat">
-                <strong>3</strong>
-                <span>Core services</span>
-              </div>
-              <div className="stat">
-                <strong>1:1</strong>
-                <span>Direct communication</span>
-              </div>
+              <div className="stat"><strong>3+</strong><span>Years experience</span></div>
+              <div className="stat"><strong>4</strong><span>Featured projects</span></div>
+              <div className="stat"><strong>16</strong><span>Core technologies</span></div>
             </div>
           </aside>
         </section>
@@ -191,14 +187,8 @@ function App() {
         <section className="section" id="services">
           <div className="container">
             <div className="section-heading">
-              <div>
-                <div className="eyebrow">What I can do</div>
-                <h2>Services built around your goals.</h2>
-              </div>
-              <p className="section-intro">
-                Focused technical support for businesses, teams and individuals
-                who need dependable delivery.
-              </p>
+              <div><div className="eyebrow">What I work on</div><h2>Development focused on real business needs.</h2></div>
+              <p className="section-intro">From SharePoint portals to full-stack applications and automated workflows.</p>
             </div>
             <div className="three-grid">
               {services.map((service) => (
@@ -210,35 +200,43 @@ function App() {
                 </article>
               ))}
             </div>
-            <p className="small-note">
-              *Keep only the tools and services you can confidently deliver.
-            </p>
           </div>
         </section>
 
         <section className="section" id="work">
           <div className="container">
             <div className="section-heading">
-              <div>
-                <div className="eyebrow">Selected work</div>
-                <h2>Projects that show how I think.</h2>
-              </div>
-              <p className="section-intro">
-                Replace these concept examples with your own approved screenshots,
-                links and project details before publishing.
-              </p>
+              <div><div className="eyebrow">Selected work</div><h2>Projects and business solutions.</h2></div>
+              <p className="section-intro">A selection of solutions delivered during my professional experience. Client-specific details can be shared where permitted.</p>
             </div>
             <div className="project-grid">
               {projects.map((project) => (
                 <article className="info-card project-card" key={project.number}>
                   <ProjectVisual variant={project.variant} />
                   <div className="project-content">
-                    <div className="eyebrow">Concept project {project.number}</div>
+                    <div className="eyebrow">Project {project.number} · {project.period}</div>
                     <h3>{project.title}</h3>
                     <p>{project.description}</p>
                     <TagList items={project.tags} />
-                    <div className="small-note">{project.note}</div>
                   </div>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="section" id="experience">
+          <div className="container">
+            <div className="section-heading">
+              <div><div className="eyebrow">Career journey</div><h2>Professional experience.</h2></div>
+            </div>
+            <div className="steps-grid">
+              {experience.map((item) => (
+                <article className="step-card" key={item.company}>
+                  <strong>{item.period}</strong>
+                  <h3>{item.role}</h3>
+                  <p><b>{item.company}</b></p>
+                  <p>{item.details}</p>
                 </article>
               ))}
             </div>
@@ -247,25 +245,20 @@ function App() {
 
         <section className="section" id="about">
           <div className="container about-grid">
-            <div>
-              <div className="eyebrow">A bit about me</div>
-              <h2>Practical thinking. Thoughtful execution.</h2>
-            </div>
+            <div><div className="eyebrow">About me</div><h2>Bridging business requirements and technology.</h2></div>
             <div className="about-panel">
               <p>
-                I&apos;m a SharePoint professional with 3.6 years of experience
-                and training in web development. I enjoy turning requirements
-                into clear, usable digital experiences — whether that&apos;s
-                improving a SharePoint workspace or building a responsive website.
+                I&apos;m a software developer based in Mumbai with a Bachelor of Science
+                in Information Technology. My experience includes developing SharePoint
+                Online intranet portals, Employee Self-Service applications, role-based
+                business workflows and responsive web applications.
               </p>
               <p>
-                I value clear communication, realistic timelines and solutions
-                that are easy for people to use. Tell me what you&apos;re trying
-                to achieve, and I&apos;ll help map out a sensible way to build it.
+                I enjoy understanding how a business process works, identifying where
+                technology can simplify it, and building solutions that are clear,
+                maintainable and easy for people to use. I graduated with a CGPA of 9.02/10.
               </p>
-              <a className="button button-ghost button-small" href="#contact">
-                Discuss your project ↗
-              </a>
+              <a className="button button-ghost button-small" href="#contact">Let&apos;s connect ↗</a>
             </div>
           </div>
         </section>
@@ -273,49 +266,20 @@ function App() {
         <section className="section" id="skills">
           <div className="container">
             <div className="section-heading">
-              <div>
-                <div className="eyebrow">My toolkit</div>
-                <h2>Skills &amp; technologies.</h2>
-              </div>
-              <p className="section-intro">
-                A concise overview. Remove or adjust any item that doesn&apos;t
-                reflect your hands-on skill level.
-              </p>
+              <div><div className="eyebrow">Technical toolkit</div><h2>Skills &amp; technologies.</h2></div>
+              <p className="section-intro">Technologies used across my SharePoint, automation and full-stack development work.</p>
             </div>
             <div className="skill-list">
-              {skills.map((skill) => (
-                <span className="skill" key={skill}>
-                  {skill}
-                </span>
-              ))}
+              {skills.map((skill) => <span className="skill" key={skill}>{skill}</span>)}
             </div>
-            <p className="small-note">
-              *Confirm the exact SharePoint versions and tools you have used.
-            </p>
           </div>
         </section>
 
         <section className="section">
           <div className="container">
-            <div className="section-heading">
-              <div>
-                <div className="eyebrow">How we&apos;ll work</div>
-                <h2>A straightforward process.</h2>
-              </div>
-            </div>
+            <div className="section-heading"><div><div className="eyebrow">Education</div><h2>Academic background.</h2></div></div>
             <div className="steps-grid">
-              {[
-                ["01", "Understand", "We discuss your goals, requirements and priorities."],
-                ["02", "Plan", "I outline the scope, deliverables and timeline."],
-                ["03", "Build", "I share progress and refine the solution with your feedback."],
-                ["04", "Deliver", "You receive the agreed work and handover notes."],
-              ].map(([number, title, description]) => (
-                <article className="step-card" key={number}>
-                  <strong>{number}</strong>
-                  <h3>{title}</h3>
-                  <p>{description}</p>
-                </article>
-              ))}
+              <article className="step-card"><strong>CGPA: 9.02 / 10</strong><h3>Bachelor of Science in Information Technology</h3><p>Anandibai Damodar Kale College, Mumbai</p></article>
             </div>
           </div>
         </section>
@@ -324,29 +288,14 @@ function App() {
           <div className="container">
             <div className="contact-panel">
               <div>
-                <div className="eyebrow">Have a project in mind?</div>
-                <h2>Let&apos;s make your next idea work better.</h2>
-                <p>
-                  Share a little about your project. I&apos;ll get back to you
-                  to discuss the next steps.
-                </p>
+                <div className="eyebrow">Get in touch</div>
+                <h2>Have an opportunity or project in mind?</h2>
+                <p>I&apos;d be happy to discuss SharePoint, SPFx, .NET or full-stack development opportunities.</p>
+                <p><b>Email:</b> mahesh.kelkeri45@gmail.com · <b>Phone:</b> 8452079859</p>
               </div>
               <div className="contact-actions">
-                {/* Replace this address and LinkedIn URL before publishing. */}
-                <a
-                  className="button"
-                  href="mailto:YOUR_EMAIL@example.com?subject=Freelance%20project%20enquiry"
-                >
-                  Email me ↗
-                </a>
-                <a
-                  className="button button-ghost"
-                  href="https://www.linkedin.com/in/YOUR-LINKEDIN/"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  LinkedIn ↗
-                </a>
+                <a className="button" href="mailto:mahesh.kelkeri45@gmail.com?subject=Portfolio%20Enquiry">Email me ↗</a>
+                <a className="button button-ghost" href="https://www.linkedin.com/in/mahesh-menkeri-296233201" target="_blank" rel="noreferrer">LinkedIn ↗</a>
               </div>
             </div>
           </div>
@@ -355,8 +304,8 @@ function App() {
 
       <footer className="site-footer">
         <div className="container footer-inner">
-          <span>© {year} Mahesh. Built with care.</span>
-          <span>SharePoint Developer · Web Developer · India</span>
+          <span>© {year} Mahesh Menkeri. Built with React.</span>
+          <span>SharePoint &amp; SPFx Developer · Full Stack Developer · Mumbai, India</span>
         </div>
       </footer>
     </>
